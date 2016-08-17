@@ -1,0 +1,14 @@
+{
+  "name": "learn-code",
+  "version": "1.0.0",
+  "description": "A place to learn save and review problems for leet code and code eval. I think it is better to save my solution somewhere so i can pick it up after a few years. This would also be a better place for practice unit test.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yizhan wang",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "jasmine": "^2.4.1"
+  }
+}
