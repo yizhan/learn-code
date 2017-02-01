@@ -2,8 +2,8 @@ import time
 WARNING = '\033[93m'
 ENDC = '\033[0m'
 
-inputNum = 45678300
-target = 87564
+inputNum = 1
+target = 1
 
 # a always bigger then b
 def halfDiff(a, b):
@@ -29,10 +29,11 @@ class Solution(object):
         preN = n
         newN = 0
         gOut = guess(n)
-        print gOut
+
+        if gOut == 0:
+            return n
 
         # phase 1 find util guess over and less
-
         gOutStart = gOut
         while(gOutStart == gOut):
             if gOut == 1:
@@ -44,10 +45,10 @@ class Solution(object):
                 n = n / 2
                 gOut = guess(n)
 
+        if gOut == 0:
+            return preN
 
-        # phase 2 find guessed Number between big and small number
-        print n, preN
-
+        # phase 2 
         while gOut != 0:
             if n > preN:
                 newNum = n - halfDiff(n, preN)
@@ -68,33 +69,11 @@ class Solution(object):
                     preN = newNum
 
             print gOut
-
-        # while(gOut != 0):
-        #     if gOut == 1:
-        #         newN = n + ((preN - newN) // 2)
-        #         preN = n
-        #         gOut = guess(n)
-        #         print gOut
-        #         print n
-        #     elif gOut == -1:
-        #         newN = n - ((preN + newN) // 2)
-        #         preN = n
-        #         gOut = guess(n)
-        #         print gOut
-        #         print n
         return newNum
 
-class MyClass:
-    """A simple example class"""
-    i = 12345
-
-    def f(self):
-        return 'hello world'
-
-print "This line will be printed."
 tmp = Solution()
 print tmp.guessNumber(inputNum);
-# print halfDiff(1, 2);
+
 
 
 
